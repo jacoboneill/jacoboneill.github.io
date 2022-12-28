@@ -1,3 +1,4 @@
 - [ ] Create a workflow to convert the markdown syntax to HTML
 - [ ] Add styling
 - [ ] convert the code blocks to imported repl blocks
+- [ ] [Automate AI](https://www.youtube.com/watch?v=atezG_OJGDg)
