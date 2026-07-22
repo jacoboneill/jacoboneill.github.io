@@ -11,6 +11,7 @@
   <body>
     <nav>
       <ul>
+        <!-- biome-ignore lint/a11y/useValidAnchor: needs to go to top of page -->
         <li><a href="#">Home</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="mailto:jacoboneill2000@outlook.com">Contact</a></li>
@@ -28,20 +29,22 @@
             <div id="introduction">
               <h1>Hi, I'm Jacob</h1>
               <p id="status">
-                <img src="./static/img/status_icon.svg" />
-                Open to work · Backend engineer roles
+                <img src="./static/img/status_icon.svg" alt="status icon" />
+                Open to work · Software engineer roles
               </p>
               <p id="location">
-                <img src="./static/img/location_icon.svg" /> England, United
+                <img src="./static/img/location_icon.svg" alt="location icon"/> England, United
                 Kingdom
               </p>
             </div>
           </div>
           <p>
-            Backend software engineer with experience in building production
-            systems across IoT, industrial compliance, and e-learning. Strongest
-            in Go and Python for backend work, comfortable across the full stack
-            from embedded firmware to deployment infrastructure.
+            Software engineer with nearly three years of experience building
+            production systems across IoT, industrial compliance, and
+            e-learning. Strongest in TypeScript and Python, building end-to-end
+            from API and database design through to deployment, and comfortable
+            across the full stack from embedded firmware to deployment
+            infrastructure.
           </p>
           <p>
             Currently contracting through O'Neill Technology Solutions and
@@ -90,13 +93,22 @@
             <li>
               <figure>
                 <img
+                  src="./static/img/typescript_logo.svg"
+                  alt="TypeScript Logo"
                   class="icon"
-                  src="./static/img/go_logo.svg"
-                  alt="Go Logo"
                 />
-                <figcaption>Go</figcaption>
+                <figcaption>TypeScript</figcaption>
               </figure>
-              <img src="./static/img/gopher.svg" alt="Go Gopher" />
+            </li>
+            <li>
+              <figure>
+                <img
+                  src="./static/img/react_logo.svg"
+                  alt="React Logo"
+                  class="icon"
+                />
+                <figcaption>React</figcaption>
+              </figure>
             </li>
             <li>
               <figure>
@@ -141,21 +153,11 @@
             <li>
               <figure>
                 <img
-                  src="./static/img/typescript_logo.svg"
-                  alt="TypeScript Logo"
                   class="icon"
+                  src="./static/img/go_logo.svg"
+                  alt="Go Logo"
                 />
-                <figcaption>TypeScript</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img
-                  src="./static/img/react_logo.svg"
-                  alt="React Logo"
-                  class="icon"
-                />
-                <figcaption>React</figcaption>
+                <figcaption>Go</figcaption>
               </figure>
             </li>
             <li>
@@ -175,9 +177,9 @@
         <h1>Work</h1>
         <div class="container">
           <div role="tablist">
-            <button role="tab" id="work-button" aria-selected="true">
+            <button type="button" role="tab" id="work-button" aria-selected="true">
               Work</button
-            ><button role="tab" id="education-button" aria-selected="false">
+            ><button type="button" role="tab" id="education-button" aria-selected="false">
               Education
             </button>
           </div>
@@ -196,23 +198,36 @@
                 </div>
                 <ul>
                   <li>
-                    15-month engagement with CGS Engineering as sole developer
-                    on an ATEX industrial compliance platform. Owned the full
+                    Sole developer on an ATEX industrial compliance platform for
+                    CGS Engineering (Jan 2025 - Mar 2026). Owned the full
                     lifecycle from requirements gathering through architecture,
                     implementation, and technical documentation.
                   </li>
                   <li>
-                    Built a containerised Flask, React, and PostgreSQL web
+                    Built a containerised Flask, React, PostgreSQL, and Caddy web
                     application serving multiple client organisations with
                     role-based access control and white-label theming. Enabled
                     the client to scale from a service-based to a product-based
                     business model.
                   </li>
                   <li>
-                    Subsequent engagements included building a custom SCORM
-                    content generation framework as a private npm package
-                    (Preact, Vite) and deploying a TalentLMS e-learning platform
-                    with GDPR/DPA compliance and German localisation.
+                    Sole developer building a modern xAPI/cmi5 e-learning
+                    framework (TypeScript, Preact, Vite) for Front Foot Creative,
+                    streaming 20GB+ video assets from Cloudflare R2 and deploying
+                    to Cloudflare Pages via Wrangler and GitHub Actions for
+                    CI/CD.
+                  </li>
+                  <li>
+                    Earlier e-learning work included a custom SCORM 2004 content
+                    generation framework published as a private npm package
+                    (Preact, Vite) and onboarding non-technical clients onto
+                    TalentLMS with GDPR/DPA compliance and German, Polish, and
+                    Romanian localisations.
+                  </li>
+                  <li>
+                    Incorporated O'Neill Technology Solutions (Jan 2026),
+                    handling client scoping, contract negotiation, and delivery
+                    directly.
                   </li>
                 </ul>
               </li>
@@ -249,6 +264,31 @@
           </div>
           <div role="tabpanel" id="education" aria-hidden="true">
             <ul>
+              <li>
+                <img
+                  src="./static/img/harvard_logo.png"
+                  alt="Harvard University Logo"
+                  class="logo"
+                />
+                <h1 class="university">Harvard University (online via edX)</h1>
+                <div>
+                  <p class="course">
+                    CS50x: Introduction to Computer Science
+                  </p>
+                  <p class="date">Nov 2024</p>
+                </div>
+                <ul>
+                  <li>
+                    Completed Harvard's CS50x, covering C, Python, SQL, and web
+                    development fundamentals.
+                  </li>
+                  <li>
+                    Self-designed final project: Backpack Trading, a
+                    knapsack-algorithm portfolio simulator with a NASDAQ data
+                    scraper and data visualisation.
+                  </li>
+                </ul>
+              </li>
               <li>
                 <img
                   src="./static/img/uclan_logo.jpeg"
@@ -292,19 +332,17 @@
         <div class="container">
           <div class="project">
             <img
-              src="./static/img/pico_bios_kbd.webp"
-              alt="pico-bios-kbd Preview"
-              class="preview"
+              src="./static/img/goto.webp"
+              alt="goto Preview"
             />
-            <h1>pico-bios-kbd</h1>
+            <h1>goto</h1>
             <p>
-              A four button USB HID keyboard built on a Raspberry Pi Pico W for
-              headless BIOS navigation
+            A terminal-first URL shortener made for curl. Mint a short link, get redirected by the short link and go to the stats endpoint to get 24h and 7d analytics. Built with Go, SQLite (SQLC), and structured logging with 90% test coverage.
             </p>
             <ul>
               <li>
                 <a
-                  href="https://www.github.com/jacoboneill/pico-bios-kbd"
+                  href="https://www.github.com/jacoboneill/goto"
                   target="_blank"
                   ><img
                     src="./static/img/github_icon.svg"
@@ -317,19 +355,19 @@
           </div>
           <div class="project">
             <img
-              src="./static/img/fzf-music.webp"
-              alt="fzf-music Preview"
-              class="preview"
+              src="./static/img/securebin.webp"
+              alt="SecureBin Preview"
             />
-            <h1>fzf-music</h1>
+            <h1>SecureBin</h1>
             <p>
-              A terminal-based music playlist browser using fzf to select and
-              play local playlists with cover art previews via mpv.
+              An end-to-end encrypted pastebin with client-side AES-256-GCM
+              encryption via the Web Crypto API. The server only ever stores
+              ciphertext. Built with Go, Templ, HTMX, and SQLite.
             </p>
             <ul>
               <li>
                 <a
-                  href="https://www.github.com/jacoboneill/fzf-music"
+                  href="https://www.github.com/jacoboneill/SecureBin"
                   target="_blank"
                   ><img
                     src="./static/img/github_icon.svg"
@@ -342,32 +380,7 @@
           </div>
           <div class="project">
             <img
-              src="./static/img/linkedin_notification_purger.webp"
-              alt="LinkedIn Notification Purger Preview"
-              class="preview"
-            />
-            <h1>LinkedIn Notification Purger</h1>
-            <p>
-              A Chrome extension that bulk-deletes LinkedIn notifications,
-              filling a missing feature gap in LinkedIn's UI.
-            </p>
-            <ul>
-              <li>
-                <a
-                  href="https://www.github.com/jacoboneill/linkedin-notification-purger"
-                  target="_blank"
-                  ><img
-                    src="./static/img/github_icon.svg"
-                    alt="GitHub Icon"
-                    class="icon"
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="project">
-            <img
-              src="/static/img/backpack_trading.webp"
+              src="./static/img/backpack_trading.webp"
               alt="Backpack Trading Preview"
               class="preview"
             />
@@ -394,6 +407,31 @@
                   ><img
                     src="./static/img/youtube_icon.svg"
                     alt="YouTube Icon"
+                    class="icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="project">
+            <img
+              src="./static/img/pico_bios_kbd.webp"
+              alt="pico-bios-kbd Preview"
+              class="preview"
+            />
+            <h1>pico-bios-kbd</h1>
+            <p>
+              A four button USB HID keyboard built on a Raspberry Pi Pico for
+              headless BIOS navigation.
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.github.com/jacoboneill/pico-bios-kbd"
+                  target="_blank"
+                  ><img
+                    src="./static/img/github_icon.svg"
+                    alt="GitHub Icon"
                     class="icon"
                   />
                 </a>

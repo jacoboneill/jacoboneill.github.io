@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono&display=swap");
+
+:root {
+	--text-primary: #000000;
+	--text-secondary: #555555;
+	--text-muted: #777777;
+
+	--border-color: 204, 204, 204;
+	--border-radius: 5px;
+
+	--box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.75);
+
+	--bg-primary: #ffffff;
+	--bg-dark: #f4f4f4;
+	--bg-hover: #f7f7f7;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: var(--text-primary);
+	background: var(--bg-primary);
+	font-family: "Inter", sans-serif;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+nav {
+	position: sticky;
+	top: 0;
+	padding: 2rem 0 1rem;
+	margin: 0 0 1rem 0;
+	backdrop-filter: blur(8px);
+	background: rgba(255, 255, 255, 0.8);
+	z-index: 999999;
+}
+
+nav ul {
+	display: flex;
+	gap: 2rem;
+	color: var(--text-muted);
+	max-width: 750px;
+	width: 100%;
+	margin: 0 auto 2rem;
+	padding: 0 1rem;
+}
+
+nav a {
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.2s ease;
+}
+
+nav a:hover {
+	color: var(--text-primary);
+	border-color: inherit;
+}
+
+main {
+	margin: 0 0 7.5rem;
+	padding: 0 1rem;
+	line-height: 1.5;
+}
+
+main > *:not(#projects) {
+	margin: 0 auto;
+	max-width: 750px;
+}
+
+#about {
+	margin: 0 0 3rem 0;
+}
+
+#about #title {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin: 0 0 2rem 0;
+}
+
+#about #title > img {
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	min-width: 0;
+	min-height: 0;
+	object-fit: cover;
+	border: 2px solid rgb(var(--border-color));
+	padding: 2px;
+}
+
+#introduction p {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	color: var(--text-muted);
+	font-style: italic;
+	font-size: 1rem;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		filter: saturate(100%);
+	}
+	50% {
+		filter: saturate(150%);
+	}
+}
+
+#introduction img {
+	animation: pulse 4s ease-in-out infinite;
+}
+
+#introduction #status img {
+	height: 0.5rem;
+	width: 1rem;
+}
+
+#introduction #location img {
+	height: 1rem;
+	width: 1rem;
+}
+
+#about > ul {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	padding: 0;
+	color: var(--text-muted);
+	margin: 0.75rem 0 0 0;
+	height: 2rem;
+}
+
+#about > ul img,
+#projects .icon {
+	aspect-ratio: 1 / 1;
+	height: 1.25rem;
+}
+
+#about > ul > li:first-child {
+	border: 1px solid rgba(var(--border-color), 0.25);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	transition:
+		background 0.2s ease,
+		transform 0.2s ease;
+}
+
+#about > ul > li:first-child:hover {
+	background: var(--bg-hover);
+	transform: scale(1.05);
+}
+
+#about > ul > li:first-child > a {
+	display: flex;
+	align-items: center;
+	padding: 5px 1rem;
+}
+
+#about > ul > li:first-child > a::before {
+	content: "My CV";
+	color: var(--text-primary);
+	font-size: 0.75rem;
+	font-weight: bold;
+	margin: 0 0.5rem 0 0;
+}
+
+#about > ul > li:first-child > a > img {
+	display: inline;
+}
+
+#technologies ul {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	margin-bottom: 5rem;
+}
+
+#technologies li {
+	position: relative;
+}
+
+#technologies img:not(figure img) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5rem;
+	transform: rotate(-30deg);
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1;
+	transition:
+		opacity 0.2s ease,
+		transform 0.2s ease,
+		visibility 0.2s ease;
+}
+
+#technologies figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.75rem;
+	border: 1px solid rgba(var(--border-color), 0.25);
+	border-radius: 5px;
+	box-shadow: 0 5px 10px -10px rgba(0, 0, 0, 0.75);
+	transition: transform 0.2s ease;
+	background: var(--bg-primary);
+	position: relative;
+	z-index: 2;
+}
+
+#technologies figure:hover {
+	transform: scale(1.05);
+}
+
+#technologies figure > img {
+	flex: 1;
+	max-height: 2rem;
+	width: auto;
+	object-fit: contain;
+}
+
+#technologies figure > img[alt="Linux Logo"] {
+	transform: scale(1.2);
+}
+
+#technologies figure > img[alt="Docker Logo"] {
+	transform: scale(1.5);
+}
+
+#technologies figcaption {
+	margin-top: 0.5rem;
+	font-style: italic;
+	color: var(--text-secondary);
+	font-weight: 300;
+}
+
+#eduwork .container > [role="tablist"] {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 1rem 0;
+	padding: 0.3rem 0.25rem;
+	background: var(--bg-dark);
+	border: 1px solid rgba(var(--border-color), 0.25);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+
+#eduwork [role="tab"] {
+	width: 50%;
+	border-radius: var(--border-radius);
+	transition:
+		background 0.2s ease,
+		color 0.2s ease;
+}
+
+#eduwork [role="tab"][aria-selected="true"] {
+	background: var(--bg-primary);
+	box-shadow: var(--box-shadow);
+}
+
+#eduwork [role="tab"][aria-selected="false"] {
+	color: var(--text-muted);
+}
+
+#eduwork [role="tab"][aria-selected="false"]:hover {
+	color: var(--text-secondary);
+}
+
+#eduwork [role="tab"][aria-selected="false"]:active {
+	transform: translateY(1px) scale(0.99);
+}
+
+#eduwork .container {
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+
+#eduwork .container > [role="tabpanel"],
+.project {
+	border-radius: calc(var(--border-radius) * 2);
+	border: 1px solid rgba(var(--border-color), 0.5);
+	box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.75);
+}
+
+#eduwork .container > [role="tabpanel"] {
+	grid-row: 2;
+	grid-column: 1;
+	padding: 0 4rem 0 1rem;
+	transition:
+		opacity 0.2s ease,
+		visibility 0.2s ease;
+}
+
+#eduwork [role="tabpanel"][aria-hidden="true"] {
+	visibility: hidden;
+	opacity: 0;
+}
+
+#eduwork [role="tabpanel"][aria-hidden="false"] {
+	visibility: visible;
+	opacity: 1;
+}
+
+#eduwork [role="tabpanel"] > ul {
+	margin-left: 32px;
+	padding: 2rem 1rem 1rem;
+	border-left: 1px solid rgb(var(--border-color));
+	height: 100%;
+}
+
+#eduwork [role="tabpanel"] > ul > li {
+	margin: 0 0 2rem 32px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+#eduwork [role="tabpanel"] .logo {
+	position: absolute;
+	width: 48px;
+	left: -48px;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	border: 1px solid rgb(var(--border-color));
+}
+
+#eduwork [role="tabpanel"] > ul > li > ul {
+	padding-left: 1.5rem;
+	list-style: disc outside;
+	font-size: 0.9rem;
+}
+
+#eduwork [role="tabpanel"] > ul > li > div {
+	display: flex;
+	font-size: 0.8rem;
+	color: var(--text-secondary);
+	font-style: italic;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+}
+
+#projects {
+	margin-top: 4rem;
+	scroll-margin-top: 6rem;
+}
+
+#projects > h1,
+#eduwork > h1 {
+	margin: 0 auto 1rem;
+	max-width: 750px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+#eduwork [role="tabpanel"] h1 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+#eduwork > h1::before,
+#eduwork > h1::after,
+#projects > h1::before,
+#projects > h1::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: rgba(var(--border-color), 0.5);
+}
+
+#projects > .container {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (min-width: 768px) {
+	#projects > .container {
+		margin: 0;
+		max-width: none;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		padding: 1rem 1rem 1rem 3rem;
+		overflow-x: scroll;
+		overflow-y: clip;
+		scroll-snap-type: x mandatory;
+		scroll-padding-left: 2rem;
+		scroll-behavior: smooth;
+		scrollbar-width: none;
+	}
+
+	#projects > .container::-webkit-scrollbar {
+		display: none;
+	}
+
+	.project {
+		flex-shrink: 0;
+		scroll-snap-align: start;
+	}
+}
+
+.project {
+	box-sizing: content-box;
+	text-align: center;
+	width: 320px;
+	aspect-ratio: 3 / 4;
+	padding: 2rem 2rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: transform 0.2s ease;
+}
+
+.project:hover {
+	transform: scale(1.0125);
+}
+
+.project > img,
+.project > video {
+	width: 100%;
+	object-fit: contain;
+	margin: 0 0 1rem;
+	border-radius: calc(var(--border-radius) * 2);
+	box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.75);
+}
+
+.project ul {
+	display: flex;
+	margin: auto 0 0.5rem;
+	width: 100%;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+#projects .project .icon {
+	width: 1.5rem;
+}
+
+#projects .project p {
+	color: var(--text-muted);
+}

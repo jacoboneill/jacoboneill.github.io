@@ -1,2 +1,8 @@
 .DS_Store
 .vite/
+.wrangler
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+node_modules/
