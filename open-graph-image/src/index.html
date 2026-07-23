@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG Card</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #1e1e2e; /* Catppuccin Mocha base */
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar {
+    position: absolute;
+    top: 115px;
+    left: 90px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #313244; /* surface0 */
+  }
+
+  .content {
+    position: absolute;
+    top: 190px;
+    left: 560px;
+    width: 570px;
+  }
+
+  .site {
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    font-size: 20px;
+    color: #89b4fa; /* blue */
+    margin-bottom: 14px;
+  }
+
+  .name {
+    font-size: 56px;
+    font-weight: 600;
+    color: #cdd6f4; /* text */
+    white-space: nowrap;
+  }
+
+  .role {
+    font-size: 24px;
+    color: #a6adc8; /* subtext0 */
+    margin-top: 14px;
+    line-height: 1.4;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .badges img {
+    height: 28px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+  <img class="avatar" src="https://avatars.githubusercontent.com/u/41302054?v=4" alt="Jacob O'Neill">
+
+  <div class="content">
+    <div class="site">jacoboneill.dev</div>
+    <div class="name">Jacob O'Neill</div>
+    <div class="role">Full Stack Software Engineer and Technical Consultant</div>
+
+    <div class="badges">
+      <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" />
+      <img alt="React" src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" />
+      <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
+      <img alt="Go" src="https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white" />
+      <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white" />
+      <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" />
+      <img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black" />
+    </div>
+  </div>
+
+</body>
+</html>
