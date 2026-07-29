@@ -80,7 +80,7 @@ nav a {
 
 nav a:hover {
 	color: var(--text-primary);
-	border-color: inherit;
+	border-color: currentColor;
 }
 
 main {
@@ -135,7 +135,7 @@ main > *:not(#projects) {
 	}
 }
 
-#introduction img {
+#introduction #status img {
 	animation: pulse 4s ease-in-out infinite;
 }
 

@@ -30,7 +30,7 @@
   )[
     #link("mailto:jacoboneill2000@outlook.com")[jacoboneill2000\@outlook.com]
     #h(10pt)
-    #link("https://jacoboneill.dev")[jacoboneill.dev]
+    #link("https://www.jacoboneill.dev")[jacoboneill.dev]
     #h(10pt)
     #link("https://github.com/jacoboneill")[github.com/jacoboneill]
     #h(10pt)
